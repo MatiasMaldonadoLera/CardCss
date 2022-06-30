@@ -1,0 +1,196 @@
+@import "variables";
+
+@font-face {
+  font-family: "Kumbh Sans";
+  src: url("../font/Kumbh_Sans/KumbhSans-VariableFont_wght.ttf")
+      format("truetype"),
+    url("../font/Kumbh_Sans/static/KumbhSans-Black.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+¨*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  color: $veryDarkDesaturatedBlue;
+}
+//GRID
+.grid {
+  background-color: $darkCyan;
+  height: calc(100vh - 0px);
+  background-image: url(../images/bg-pattern-top.svg),
+    url(../images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 50vw bottom 50vh, left 50vw top 50vh;
+  background-color: $darkCyan;
+  display: grid;
+  grid-template-areas:
+    ". a a ."
+    ". a a .";
+}
+
+.card {
+  border-radius: 20px;
+  align-items: center;
+  background-color: white;
+  grid-area: a;
+  align-self: center;
+  justify-self: center;
+  height: 55vh;
+  display: grid;
+  grid-template-rows: 33% 45% 22%;
+  box-shadow: 2px 4px 4px rgb(0, 0, 0.9);
+
+  &-header {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0 0;
+  }
+  &-body {
+    display: grid;
+    grid-row: 2;
+    border-bottom: 0.5px solid $darkGray;
+    height: 100%;
+    justify-content: center;
+    grid-template-rows: 35% 65%;
+    .card-profile {
+      border-radius: 50%;
+      position: relative;
+      bottom: 50px;
+      border: 3px solid white;
+      justify-self: center;
+    }
+    .card-content {
+      display: grid;
+      &-title {
+        margin: auto 0px;
+      }
+      &-title {
+        font-size: $bodySize;
+        font-weight: $weightsAlto;
+      }
+      &-age,
+      &-city {
+        color: $darkGray;
+      }
+      &-city {
+        margin: 0px auto;
+      }
+    }
+  }
+  .card-footer {
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-around;
+    font-weight: $weightsAlto;
+    &-info {
+      display: grid;
+      align-content: center;
+    }
+    h4 {
+      margin: 0 auto;
+      font-size: $bodySize;
+    }
+    p {
+      margin: 0 auto;
+      font-size: 14px;
+      color: $darkGray;
+    }
+  }
+}
+
+//FLEX-BOX
+.flex {
+  background-color: $darkCyan;
+  height: calc(100vh - 0px);
+  background-image: url(../images/bg-pattern-top.svg),
+    url(../images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 50vw bottom 50vh, left 50vw top 50vh;
+  display: flex;
+}
+
+.flex-card {
+  border-radius: 20px;
+  background-color: white;
+  height: 55vh;
+  width: 55vh;
+  flex-flow: column wrap;
+  display: flex;
+  margin: auto;
+  box-shadow: 2px 4px 4px rgb(0, 0, 0.9);
+
+  &-header {
+    width: 100%;
+    height: 35%;
+    border-radius: 20px 20px 0 0;
+  }
+  &-body {
+    border-bottom: 0.5px solid $darkGray;
+    display: flex;
+    width: 100%;
+    flex-flow: column nowrap;
+    height: 45%;
+    .flex-card-profile {
+      border-radius: 50%;
+      position: relative;
+      bottom: 50px;
+      border: 3px solid white;
+      left: calc(50% - 55px);
+      height: 100px;
+      width: 100px;
+    }
+    .flex-card-content {
+      width: 100%;
+      height: 50%;
+      display: flex;
+      height: 30%;
+      justify-content: space-between;
+      position: relative;
+      bottom: 40px;
+      align-items: center;
+      flex-direction: column;
+      &-title {
+        font-size: $bodySize;
+        font-weight: $weightsAlto;
+      }
+      &-age,
+      &-city {
+        color: $darkGray;
+      }
+    }
+  }
+  &-footer {
+    height: 19%;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    font-weight: $weightsAlto;
+    h4 {
+      margin: 0 auto;
+      font-size: $bodySize;
+    }
+    p {
+      margin: 0 auto;
+      font-size: 14px;
+      color: $darkGray;
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
